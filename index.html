@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" rel="stylesheet">
+
+    <title>Pesquisa em integração contínua</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Pesquisa IC</a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a aria-current="page" class="nav-link active" href="#qualidade">Indicadores de qualidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mas-praticas">Más práticas de IC</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h5 class="display-5" id="qualidade">Indicadores de qualidade de software</h5>
+
+    <p class="lead">
+        Embora o conceito de qualidade de software seja amplo, existem alguns indicadores que ajudam a mensurar o grau
+        de qualidade de um software. A seguir estão listados alguns desses indicadores acompanhados por algumas métricas
+        que os representam.
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>INDICADOR</th>
+                <th>DESCRIÇÃO</th>
+                <th>MÉTRICAS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Confiabilidade</th>
+                <td>A confiabilidade do software é a possibilidade de funcionamento sem falhas de um programa de
+                    computador durante um período especificado em um ambiente especificado. A confiabilidade é uma visão
+                    da qualidade do software orientada para o cliente. Está relacionada com o funcionamento e não com a
+                    concepção do programa, e por isso é dinâmica e não estática.</td>
+                <td><ul>
+                    <li>Índice de confiabilidade</li>
+                    <li>Nível de esforço de recuperação da confiabilidade</li>
+                    <li>Linhas de código</li>
+                    <li>Número de bugs</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <th scope="row">Segurança</th>
+                <td>Segurança de software é o termo geral utilizado para descrever um software que é concebido de forma
+                    a continuar funcionando corretamente sob ataque malicioso. A segurança de software descreve
+                    metodologias, estruturas, processos e estratégias que melhoram a segurança e reduzem as
+                    vulnerabilidades dentro do software e do ambiente em que este funciona. As abordagens em relação à
+                    segurança de software são frequentemente estruturadas em torno de potenciais ataques cibernéticos
+                    maliciosos. A segurança de software também tenta identificar, proteger contra, e criar soluções para
+                    vulnerabilidades que não são o resultado de ataques maliciosos mas que são, no entanto, prejudiciais
+                    .</td>
+                <td><ul>
+                    <li>Índice de segurança</li>
+                    <li>Nível de esforço de recuperação de segurança</li>
+                    <li>Linhas de código</li>
+                    <li>Número de vulnerabilidades</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <th scope="row">Manutenibilidade</th>
+                <td>A capacidade de manutenção refere-se à facilidade com que você pode reparar, melhorar e compreender
+                    o código do software. A manutenção de software é uma fase do ciclo de desenvolvimento de software
+                    que começa após o cliente ter recebido o produto e é a fase mais cara do desenvolvimento,
+                    normalmente consumindo mais da metade dos orçamentos. Por isso é importante construir o software com
+                    foco na manutenibilidade para que se possa mantê-lo de forma eficiente.</td>
+                <td><ul>
+                    <li>Índice de manutenibilidade</li>
+                    <li>Débito técnico</li>
+                    <li>Linhas de código</li>
+                    <li>Número de code smells</li>
+                </ul></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h5 class="display-5" id="mas-praticas">Más práticas de IC</h5>
+
+    <p class="lead">
+        A seguir estão apresentadas as más práticas bem como as suas respectivas descrições para auxiliar na resposta ao
+        questionário.
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>MÁ PRÁTICA</th>
+            <th>DESCRIÇÃO</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>As "feature branches" são usadas em vez das "feature toggles"</td>
+            <td>
+                Ocorre quando a disponibilização das features em produção se dá através do uso das branches de forma a
+                restringir certas funcionalidades a um publico específico, ou mesmo, disponibilizar variantes do mesmo
+                sistema de acordo com a branch atual. Uma forma mais elegante seria o uso de "feature toggles" onde
+                existe apenas uma versão do software em produção e onde determinadas features podem ser ativadas ou
+                desativadas para alguns (ou todos os usuários) de forma dinâmica sem a necessidade de várias instâncias.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Branches divergentes</td>
+            <td>
+                Pode ocorrer devido a falta de um processo bem definido para a criação e integração das ramificações
+                do código no projeto. Sendo assim podem ocorrer confusões no versionamento, conflitos e erros difíceis
+                de se rastrear.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Os desenvolvedores possuem controle limitado do ambiente de IC</td>
+            <td>
+                Neste caso ocorre que os desenvolvedores não possuem permissões suficientes para lidar com a
+                configuração do servidor de IC, o que poder ocasionar atrasos na resolução de problemas simples mas que
+                podem trazer perdas para o desenvolvimento de software.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Notificações de falhas são enviadas apenas para os desenvolvedores explicitamente atribuídos</td>
+            <td>
+                Esta má prática consiste no fato de que as notificações de problemas na integração contínua somente são
+                enviadas aos desenvolvedores atribuídos ou que de alguma forma participaram da tarefa. Sendo assim os
+                conhecimentos pertinentes à resolução dos problemas não são adequadamente compartilhados entre os
+                membros da equipe/projeto.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Testes incompletos/ausentes nas branches de atividade</td>
+            <td>
+                Neste caso falta de consistência ou ausência de testes pode fazer com que os erros não sejam detectados
+                pelo framework de integração contínua e possam se propagar até o sistema em produção o que pode levar a
+                sérios problemas implicando inclusive em encargos financeiros a depender da gravidade das falhas.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>Algumas etapas do pipeline de IC são acionadas manualmente</td>
+            <td>
+                O fato de algumas tarefas do pipeline de integração contínua terem de ser acionadas manualmente pode
+                ocasionar atrasos no processo de desenvolvimento e entrega do software uma vez que pode ocorrer de nem
+                sempre um integrante da equipe estar disponível para executar os passos manuais do processo. Um outro
+                problema implícito nesta má prática é a falta de confiança no processo de IC utilizado e isto pode estar
+                relacionado a falhas nos testes, análise estática deficiente, entre outros problemas.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>Falta de um ambiente semelhante ao de produção para execução dos testes</td>
+            <td>
+                A existência desta má prática prejudica a confiabilidade dos testes uma vez que se torna difícil prever
+                quais problemas podem ocorrer no ambiente de produção.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>Os testes não são organizados em módulos de acordo com os seus propósitos</td>
+            <td>
+                Este é um problema relacionado à falta de organização nos arquivos que contém o código de teste. Sendo
+                assim, tanto a confiabilidade da suite de testes quanto a capacidade de a equipe do projeto para manter
+                os testes poderá ser impactada.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>O hardware do servidor de IC é utilizado para outros propósitos além da execução do framework de IC</td>
+            <td>
+                Esta má prática está relacionada a um problema de infraestrutura adequada para a execução do framework
+                de IC nos projetos. Neste cenário como o hardware é utilizado para vários fins, dependendo da demanda
+                de recursos os processos relacionados a testes, análise estática, build, deploy, entre outros, acabam
+                perdendo desempenho pode atrasar o processo de desenvolvimento e entrega das features de um software.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>
+                Ferramentas externas são utilizadas no modo padrão, sem adequação para as necessidades de cada projeto
+            </td>
+            <td>
+                O processo de IC é normalmente executado através da integração de diversas ferramentas que realizam
+                atividades específicas dentro do processo. Quase todas as ferramentas são passiveis de personalização
+                mas também oferecem uma configuração padrão que pode ser utilizada como base para construir uma
+                configuração adequada para cada contexto. No caso desta má prática, a utilização da configuração
+                padrão pode não refletir adequadamente as necessidades do projeto causar perdas no processo de IC.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td>O build falha devido a algum erro de execução sendo que não deveria (flaky tests)</td>
+            <td>
+                Esta má prática está diretamente ao problema dos "flaky tests" que consistem em testes de caráter não
+                deterministico, ou seja, estes podem resultar em sucesso ou em falha de forma arbitrária. Esta má
+                prática, caso exista, pode prejudicar a confiabilidade da suite de testes e fazer com que erros não
+                sejam detectados adequadamente uma vez que uma prática comum é ignorar os flaky tests.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td>Scripts de build longos</td>
+            <td>
+                Esta má prática está relacionada à organização dos scripts responsáveis por executar as tarefas de IC.
+                Caso os scripts de IC estejam mal escritos e desorganizados pode ser difícil mantê-los. Além disso,
+                scripts de IC muito longos podem resultar em um tempo de execução da IC igualmente longo, nesse caso o
+                ideal seria modularizar a execução dos passos da IC.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">13</th>
+            <td>Quality gates são definidos apenas de acordo com o que é requerido pelo cliente, sem a visão da equipe
+                de desenvolvimento</td>
+            <td>
+                Esta má prática está relacionada à cultura do ambiente de desenvolvimento. A definição dos níveis de
+                qualidade de um projeto é uma atividade importante, entretanto ao acordar o nível de qualidade
+                considerando apenas os requisitos do cliente pode ser que (1) detalhes específicos não sejam
+                analisados levando à um nível baixo de qualidade ou (2) o cliente pode especificar um nível
+                desnecessário de qualidade para o contexto do projeto, em ambos os casos teremos inconsistência no nível
+                de qualidade do software.
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">14</th>
+            <td>Desenvolvedores e equipe de manutenção são mantidos separados (ausência de DevOps)</td>
+            <td>
+                A ausência de DevOps é uma má prática relacionada à cultura do ambiente de desenvolvimento de software.
+                Neste caso podem ocorrer conflitos entre as necessidades da equipe de desenvolvimento e operação,
+                gerando atrasos e erros que poderiam ser evitados caso a equipe de fosse apenas uma, neste caso as
+                especificidades do software já seriam conhecidas por todos e muitos problemas seriam evitados.
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
